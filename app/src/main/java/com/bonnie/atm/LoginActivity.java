@@ -1,5 +1,6 @@
 package com.bonnie.atm;
 
+import android.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -8,16 +9,20 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class LoginActivity extends AppCompatActivity {
-
+    private EditText edUserid;
+    private EditText edPasswd;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        edUserid = (EditText) findViewById(R.id.userid);
+        edPasswd = (EditText) findViewById(R.id.passwd);
+        String userid = getSharedPreferences("atm",MODE_PRIVATE)
+                .getString("USERID","");
+        edUserid.setText(userid);
     }
 
     public void login(View view) {
-        EditText edUserid = (EditText) findViewById(R.id.userid);
-        EditText edPasswd = (EditText) findViewById(R.id.passwd);
         String userid = edUserid.getText().toString();
         String passwd = edPasswd.getText().toString();
         if ("bonny".equals(userid) && "1224".equals(passwd)) {
