@@ -26,11 +26,13 @@ public class UserInfoActivity extends AppCompatActivity {
         String name = getSharedPreferences("atm",MODE_PRIVATE).getString("NAME","");
         edName.setText(name);
         ages = (Spinner) findViewById(R.id.ages);
-        ArrayList<String> data = new ArrayList<>();
-        for (int i=15 ;i<=40;i++){
-            data.add(i+"");
-        }
-        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1 ,data);
+        //  ArrayList<String> data = new ArrayList<>();
+        //  for (int i=15 ;i<=40;i++){
+        //      data.add(i+"");
+        //  }
+        //        String[] data = getResources().getStringArray(R.array.ages);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+                R.array.ages, android.R.layout.simple_list_item_1);
         ages.setAdapter(adapter);
     }
     public void info(View view) {
