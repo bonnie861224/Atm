@@ -18,8 +18,8 @@ public class AddrActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_addr);
-        spcity = (Spinner) findViewById(R.id.spinner);
-        sparea= (Spinner) findViewById(R.id.spinner);
+        spcity = (Spinner) findViewById(R.id.spcity);
+        sparea= (Spinner) findViewById(R.id.sparea);
         String[] data = {"基隆市","新北市","台北市"};
         ArrayAdapter adapter = new ArrayAdapter(this,android.R.layout.simple_list_item_1 ,data);
         spcity.setAdapter(adapter);
@@ -37,7 +37,7 @@ public class AddrActivity extends AppCompatActivity {
                         if (position == 3) {
                             data = new String[]{"信義區", "大安區", "士林區"};
                         }
-                        ArrayAdapter adapter1 = new ArrayAdapter(AddrActivity.this, android.R.layout.simple_list_item_1);
+                        ArrayAdapter adapter1 = new ArrayAdapter(AddrActivity.this, android.R.layout.simple_list_item_1, data);
                         sparea.setAdapter(adapter1);
                     }
                     @Override
