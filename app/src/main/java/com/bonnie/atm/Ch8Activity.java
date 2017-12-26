@@ -31,4 +31,3 @@ public class Ch8Activity extends AppCompatActivity {
                 });
         }
     }
-
