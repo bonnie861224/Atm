@@ -20,7 +20,8 @@ public class AddrActivity extends AppCompatActivity {
         setContentView(R.layout.activity_addr);
         spcity = (Spinner) findViewById(R.id.spinner);
         sparea= (Spinner) findViewById(R.id.spinner);
-        ArrayAdapter adapter = new ArrayAdapter(this,android.R.layout.simple_list_item_1 ,new String[]{"基隆市","新北市","台北市"});
+        String[] data = {"基隆市","新北市","台北市"};
+        ArrayAdapter adapter = new ArrayAdapter(this,android.R.layout.simple_list_item_1 ,data);
         spcity.setAdapter(adapter);
         spcity.setOnItemSelectedListener(
                 new AdapterView.OnItemSelectedListener(){

@@ -17,19 +17,14 @@ public class UserInfoActivity extends AppCompatActivity {
     private static final String TAG = Ch8Activity.class.getSimpleName(); ;
     private EditText edName;
     private EditText edPhone;
-    public Button button３;
     private  Spinner ages;
-    public void address(View view){
-        Intent intent = new Intent(this,AddrActivity.class);
-        startActivity(intent);
-    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_info);
         edName = (EditText) findViewById(R.id.name);
         edPhone = (EditText) findViewById(R.id.phone);
-        button３ = (Button) findViewById(R.id.button3);
         String name = getSharedPreferences("atm",MODE_PRIVATE).getString("NAME","");
         edName.setText(name);
         ages = (Spinner) findViewById(R.id.ages);
@@ -38,10 +33,10 @@ public class UserInfoActivity extends AppCompatActivity {
         //      data.add(i+"");
         //  }
         //        String[] data = getResources().getStringArray(R.array.ages);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-                R.array.ages, android.R.layout.simple_list_item_1);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.ages, android.R.layout.simple_list_item_1);
         ages.setAdapter(adapter);
     }
+
     public void info(View view) {
         Log.d (TAG,"OK:"+ages.getSelectedItem().toString());
         String name = edName.getText().toString();
@@ -51,5 +46,9 @@ public class UserInfoActivity extends AppCompatActivity {
         setResult(RESULT_OK,getIntent());
         finish();
         }
+    public void address(View view){
+        Intent intent = new Intent(this,AddrActivity.class);
+        startActivity(intent);
+    }
 }
 
