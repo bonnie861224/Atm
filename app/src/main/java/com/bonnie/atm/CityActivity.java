@@ -17,7 +17,7 @@ import java.util.List;
 import static com.bonnie.atm.R.id.parent;
 
 public class CityActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
-    private static final String TAG = CityActivity.class.getSimpleName();
+//    private static final String TAG = CityActivity.class.getSimpleName();
     private ListView city;
     private final static int REQUEST_CITY = 105;
 
